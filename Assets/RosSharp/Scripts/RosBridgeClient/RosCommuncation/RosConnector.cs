@@ -95,5 +95,11 @@ namespace RosSharp.RosBridgeClient
             IsConnected.Reset();
             Debug.Log("Disconnected from RosBridge: " + RosBridgeServerUrl);
         }
+
+        public void DisconnectFromROS()
+        {
+            RosSocket.Close();
+            //IsConnected.Reset();
+        }
     }
 }
