@@ -361,7 +361,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143535542}
   m_CullTransparentMesh: 1
---- !u!21 &168589280
+--- !u!21 &144854934
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -370,7 +370,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: 'TargetImageMaterial
 
-    27798'
+    30196'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -554,6 +554,35 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!21 &242424883
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'TargetImage2Material
+
+    30114'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: a575ae871c7349ff991dc5a276e4fb45, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &396610658
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,7 +701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &398195353
 RectTransform:
   m_ObjectHideFlags: 0
@@ -851,7 +880,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 470767498}
+  - {fileID: 242424883}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -986,35 +1015,6 @@ MonoBehaviour:
   mHeight: 0.064149
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
---- !u!21 &470767498
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'TargetImage2Material
-
-    -40526'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a575ae871c7349ff991dc5a276e4fb45, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &512260337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,8 +1097,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 906164666}
-        m_TargetAssemblyTypeName: RosSharp.RosBridgeClient.BoolPublisher, Assembly-CSharp
+      - m_Target: {fileID: 906164668}
+        m_TargetAssemblyTypeName: RosSharp.RosBridgeClient.EmptyPublisher, Assembly-CSharp
         m_MethodName: UpdateMessage
         m_Mode: 1
         m_Arguments:
@@ -1305,6 +1305,7 @@ GameObject:
   - component: {fileID: 906164665}
   - component: {fileID: 906164666}
   - component: {fileID: 906164667}
+  - component: {fileID: 906164668}
   m_Layer: 0
   m_Name: ROSConnector
   m_TagString: Untagged
@@ -1382,6 +1383,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 906164668}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   RosConnectionFailed:
     m_PersistentCalls:
       m_Calls: []
@@ -1411,6 +1424,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Topic: /toggle_led2
+--- !u!114 &906164668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906164662}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848ea9f1ed29f6f41ac482fa14e04954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /empty_1
 --- !u!1 &1190661231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1926,7 +1952,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 168589280}
+  - {fileID: 144854934}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

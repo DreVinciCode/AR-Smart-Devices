@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace RosSharp.RosBridgeClient
 {
-    public class Empty_StdPublisher : UnityPublisher<MessageTypes.Std.Empty>
+    public class EmptyPublisher : UnityPublisher<MessageTypes.Std.Empty>
     {
         private MessageTypes.Std.Empty message;
 
